@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Náramok pre najkrajšiu babu na svete</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script>
+        // Vytvorenie scény
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xeeeeee);
+
+        // Kamera
+        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 5, 12);
+
+        // Renderer
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Ovládanie myšou
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+        controls.minDistance = 5;
+        controls.maxDistance = 20;
+
+        // Osvetlenie
+        const light = new THREE.DirectionalLight(0xffffff, 1);
+        light.position.set(5, 5, 5).normalize();
+        scene.add(light);
+
+        // Parametre guličkového náramku
+        const numBeads = 15;  // Počet guličiek
+        const radius = 4;  // Polomer kruhu
+        const beadSize = 0.8;  // Veľkosť guličky
+
+        // Materiál guličiek (kovový lesklý efekt)
+        const material = new THREE.MeshStandardMaterial({ color: 0x8B4513, metalness: 0.6, roughness: 0.3 });
+
+        // Pridanie guličiek do kruhu
+        for (let i = 0; i < numBeads; i++) {
+            const angle = (i / numBeads) * Math.PI * 2; // Výpočet uhla pre každú guličku
+            const x = radius * Math.cos(angle);
+            const z = radius * Math.sin(angle);
+
+            const beadGeometry = new THREE.SphereGeometry(beadSize, 32, 32);
+            const bead = new THREE.Mesh(beadGeometry, material);
+            bead.position.set(x, 0, z);
+            scene.add(bead);
+        }
+
+        // Animácia
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Responzívne okno
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+
+    </script>
+</body>
+</html>
