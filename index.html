@@ -2,62 +2,118 @@
 <html lang="sk">
 <head>
   <meta charset="UTF-8">
-  <title>Pre krásnu babu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pre Petru ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(135deg, #f9f3f3, #e0eafc);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      font-family: 'Open Sans', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
+      overflow: hidden;
     }
 
     .card {
-      background-color: white;
-      padding: 30px;
+      background: white;
+      padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       text-align: center;
-      max-width: 400px;
+      max-width: 500px;
+      animation: fadeIn 2s ease;
     }
 
-    .card h1 {
-      color: #8a2be2;
-      font-size: 28px;
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      color: #e91e63;
       margin-bottom: 10px;
     }
 
-    .card p {
-      font-size: 18px;
+    p {
+      font-size: 20px;
       color: #444;
     }
 
-    .heart {
-      font-size: 30px;
-      color: red;
-      animation: pulse 1.5s infinite;
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
     }
 
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #e91e63;
+      transform: rotate(45deg);
+      animation: float 6s infinite ease-in;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #e91e63;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
       }
       50% {
-        transform: scale(1.2);
+        opacity: 1;
       }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>Ahoj, kráska 🌸</h1>
-    <p>
-      Tvoje dredy sú ako umenie, <br>
-      a tvoje oči... ako galaxie, v ktorých sa človek rád stratí. ✨
-    </p>
-    <div class="heart">❤️</div>
+    <h1>Pre Petru 💖</h1>
+    <p>Si moje slniečko aj keď nesvieti.<br>
+       Každý deň bez teba je ako pesnička bez hudby.<br>
+       Chýbaš mi viac než slová dokážu opísať.</p>
+  </div>
+
+  <div class="hearts">
+    <!-- zopár sŕdc na animáciu -->
+    <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 25%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 70%; animation-delay: 1.5s;"></div>
+    <div class="heart" style="left: 85%; animation-delay: 0.5s;"></div>
   </div>
 </body>
 </html>
