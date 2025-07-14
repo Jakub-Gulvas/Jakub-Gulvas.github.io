@@ -1,49 +1,65 @@
-let resultsData = [];
+document.getElementById('search-button').addEventListener('click', search);
 
-async function search() {
-  const query = document.getElementById("searchInput").value;
-  if (!query.trim()) {
-    alert("Zadejte prosím klíčové slovo.");
-    return;
-  }
+let latestResults = [];
 
-  const response = await fetch("/search", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ query })
-  });
+function search() {
+    const query = document.getElementById('search-input').value;
+    if (!query) return;
 
-  if (!response.ok) {
-    alert("Chyba při získávání výsledků.");
-    return;
-  }
+    fetch(`http://127.0.0.1:8000/search?q=${encodeURIComponent(query)}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Dáta zo servera:", data);
+            latestResults = data;
+            displayResults(latestResults);
 
-  const data = await response.json();
-  resultsData = data.results;
 
-  displayResults(resultsData);
-  document.getElementById("downloadBtn").style.display = "inline-block";
+        })
+        .catch(error => {
+            console.error("Chyba pri načítaní výsledkov:", error);
+            document.getElementById('results').innerHTML = `<p style="color:red;">Nepodarilo sa načítať výsledky.</p>`;
+        });
 }
 
 function displayResults(results) {
-  const container = document.getElementById("results");
-  container.innerHTML = "<h2>Výsledky:</h2>";
-  results.forEach((item, index) => {
-    const div = document.createElement("div");
-    div.innerHTML = `<strong>${index + 1}. ${item.title}</strong><br><a href="${item.link}" target="_blank">${item.link}</a><br><em>${item.snippet}</em><br><br>`;
-    container.appendChild(div);
-  });
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = "";
+
+    if (!results || results.length === 0) {
+        resultsDiv.innerHTML = "<p>Žiadne výsledky.</p>";
+        return;
+    }
+
+    const list = document.createElement('ul');
+    for (const result of results) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = result.url;
+        a.textContent = result.url;
+        a.target = "_blank";
+        li.appendChild(a);
+        list.appendChild(li);
+    }
+
+    resultsDiv.appendChild(list);
 }
 
-function downloadResults() {
-  const blob = new Blob([JSON.stringify(resultsData, null, 2)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "vysledky.json";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
+document.getElementById('save-button').addEventListener('click', () => {
+    if (!latestResults || latestResults.length === 0) {
+        alert("Najprv vyhľadaj nejaké výsledky.");
+        return;
+    }
+
+    const blob = new Blob([JSON.stringify(latestResults, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = "vysledky.json";
+    a.click();
+    URL.revokeObjectURL(url);
+});

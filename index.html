@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="sk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vyhledávač Google Výsledků</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Google Výsledky</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Google Výsledky</h1>
-    <input type="text" id="searchInput" placeholder="Zadejte klíčové slovo...">
-    <button onclick="search()">Vyhledat</button>
+    <h1>Vyhľadávanie Google</h1>
+    <input type="text" id="search-input" placeholder="Zadaj hľadaný výraz...">
+    <button id="search-button">Hľadať</button>
+    <button id="save-button">Uložiť výsledky</button>
     <div id="results"></div>
-    <button id="downloadBtn" style="display:none;" onclick="downloadResults()">Stáhnout výsledky (JSON)</button>
-  </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-
