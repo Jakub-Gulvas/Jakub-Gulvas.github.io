@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 from googlesearch import search
 from flask_cors import CORS
+import os
+
 
 app = Flask(__name__)
 CORS(app)
