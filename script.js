@@ -6,7 +6,7 @@ function search() {
     const query = document.getElementById('search-input').value;
     if (!query) return;
 
-    fetch(`http://127.0.0.1:8000/search?q=${encodeURIComponent(query)}`)
+    fetch(`https://jakub-gulvas-github-io.onrender.com/search?q=${encodeURIComponent(query)}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error ${response.status}`);
