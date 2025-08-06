@@ -1,17 +1,182 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Google Výsledky</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Vyhľadávanie Google</h1>
-    <input type="text" id="search-input" placeholder="Zadaj hľadaný výraz...">
-    <button id="search-button">Hľadať</button>
-    <button id="save-button">Uložiť výsledky</button>
-    <div id="results"></div>
+  <meta name="description" content="Jakub Gulvas - Game Developer Portfolio">
+  <meta name="keywords" content="Jakub Gulvas, Game Developer, Portfolio, Web Development, App Development">
+  <meta name="author" content="Jakub Gulvas">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    function Button() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+        x.style.background = "white";
+      } else {
+        x.className = "topnav";
+        x.style.background = "none";
+      }
+    } 
+    function ColorNone(){
+      var x = document.getElementById("myTopnav");
+      x.style.background = "none";
+      x.style.transition = "0.6s";
+      x.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0)";
+    }
+    function Color(){
+      var x = document.getElementById("myTopnav");
+      x.style.background = "white";
+      x.style.transition = "0.6s";
+      x.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
+    }
+    window.addEventListener('scroll', () => {
+  if (window.scrollY == 0) {ColorNone()}
+  else{
+    Color()
 
-    <script src="script.js"></script>
+  };
+}, true);
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+}
+  </script>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>      
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="#http://www.stud.fit.vutbr.cz/~xgulvaj00/" class="active">JG</a>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    <a href="javascript:void(0);" class="icon" onclick="Button()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+ 
+  <section id="home">
+    <h1>Hi,<br>I'm <span class="blue">Jakub Gulvas</span><br> Game Developer</h1>
+    <img  src="img/main.jpg" alt="my">
+  </section>
+
+<section id="about">
+  <h2 class="section-title">About</h2>
+    <img  src="img/Huba.jpg" alt="Me">
+    <div class="categories">
+      <div class="category">
+        <div class="category-title">Game Development</div>
+        <div class="stars">★★★★☆</div>
+    </div>
+    <div class="category" >
+        <div class="category-title">App Development</div>
+        <div class="stars">★★★☆☆</div>
+    </div>
+    <div class="category">
+        <div class="category-title">Web Development</div>
+        <div class="stars">★★☆☆☆</div>
+    </div>
+    <div class="category">
+      <div class="category-title">English Level</div>
+      <div class="stars">★★★★★</div>
+  </div>
+  <div class="category">
+    <div class="category-title">Social skills</div>
+    <div class="stars">★★★★★</div>
+</div>
+<div class="category">
+  <div class="category-title">Modeling</div>
+  <div class="stars">★★☆☆☆</div>
+</div>
+    </div>
+   
+</section>
+  <section id = "education">
+    <h2 class="section-title">Education</h2>
+    <div class="education_content">
+      <div class="education_item">
+        <img class="school" src="img/fitkabudova.jpg" alt="Vut-Fit">
+        <p>I am currently pursuing a Bachelor's degree at the Faculty of Information Technology at Brno University of Technology (VUT FIT), where I am gaining extensive knowledge in the fields of computer science and mathematics, as well as the overall computer environment."</p>
+        <a href="https://www.fit.vut.cz/.cs" class="logo" target="_blank";> <img src="img/VUT.png" alt="Vut-Logo"></a>
+      </div>
+      <div class="education_item">
+        <img class="school" src="img/parovcebudova.jpg" alt="Parovce">
+        <p>I studied for eight years at the Parovské Gymnasium in Nitra, where I successfully passed my final exams. Thanks to my knowledge of mathematics, I was able to continue my studies at university.</p>
+        <a href="https://www.gpnr.sk/" class="logo" target="_blank";> <img src="img/parovce.png" alt="Parovce-Logo"></a>
+       
+      </div>
+    
+    </div>
+
+  </section>
+  <section  id="work">
+    <h2 class="section-title">Work</h2>
+
+    <div class="work__container">
+        <div class="work__img">
+        <a href= "https://lentsius-bark.itch.io/pixelgram"  target = "_blank"> <img src="img/pixelgram.png"  alt="pixelgram"> </a>
+        </div>
+        <div class="work__img">
+                <a href= "https://vajcotv.itch.io/darkstrider" target = "_blank"> <img src="img/dark_strider.jpg"  alt="darkside"> </a>  
+        </div>
+        <div class="work__img">
+         <a href= "https://summer-game-dev.itch.io/swordsouls" target = "_blank"> <img src="img/samurai.jpg"  alt="samurai"> </a>
+        </div>
+        <div class="work__img">
+        <a href= "https://summer-game-dev.itch.io/rudy-the-wrong-forest-by-fabulous-dingos" target = "_blank"> <img src="img/rudy.png"  alt="rudy"> </a>
+        </div>
+        <div class="work__img">
+            <a href= "https://princess-leiabell.itch.io/captchared" target = "_blank"> <img src="img/darkside.png"  alt="captchared"> </a>
+        </div>
+        <div class="work__img">
+           <img src="img/comingsoon.png"  alt="comingsoon">
+        </div>
+    </div>
+</section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-box">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" alt="html"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" alt="css"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" alt="java"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" alt="python"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="bash"/> 
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original-wordmark.svg" alt="unity"/>
+    </div>
+   
+  
+  </section>
+
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>jakub.gulvas@gmail.com</p>
+    <div class="contact_content">
+        <div id="contact-img"></div>
+    </div>
+</section>
+
+  
+
+  <footer class="footer">
+    <p class="footer__title">My Social Media</p>
+    <div class="footer__social">
+        <a href="https://www.facebook.com/profile.php?id=100014645164170" class="footer__icon" target = "_blank"><i class='bx bxl-facebook' ></i></a>
+        <a href="https://www.instagram.com/jakub_gulas/" class="footer__icon" target = "_blank"><i class='bx bxl-instagram' ></i></a>
+        <a href="https://discord.com/channels/@me" class="footer__icon" target = "_blank" ><i class='bx bxl-discord' ></i></a>
+        <a href="https://github.com/VajcoTV" class="footer__icon" target = "_blank" ><i class='bx bxl-github' ></i></a>
+    </div>
+ 
+</footer>
+
 </body>
 </html>
