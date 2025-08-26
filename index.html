@@ -3,18 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pre „Lejku zlodejku“</title>
+  <title>Pre Marianu</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg-1: #0f1021;
-      --bg-2: #24142c;
-      --bg-3: #3a1c40;
-      --pink: #ff7aa2;
-      --rose: #ff4d6d;
-      --light: #fff5fa;
-      --glass: rgba(255,255,255,0.12);
-      --glass-2: rgba(255,255,255,0.24);
+      --bg-1: #10201f;
+      --bg-2: #1c2f3a;
+      --bg-3: #16324f;
+      --aqua: #6fffe9;
+      --teal: #00c2a8;
+      --light: #e8fffb;
       --shadow: 0 20px 40px rgba(0,0,0,.35);
     }
 
@@ -23,12 +21,12 @@
 
     body{
       margin: 0;
-      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      font-family: 'Poppins', sans-serif;
       color: var(--light);
       background:
-        radial-gradient(1200px 800px at 10% 10%, #2b1740 0%, transparent 60%),
-        radial-gradient(1000px 700px at 90% 0%, #46194a 0%, transparent 60%),
-        radial-gradient(1200px 900px at 50% 100%, #1a0f2a 0%, transparent 60%),
+        radial-gradient(1200px 800px at 20% 10%, #1c3f4a 0%, transparent 60%),
+        radial-gradient(1000px 700px at 90% 0%, #124a42 0%, transparent 60%),
+        radial-gradient(1200px 900px at 50% 100%, #0f2027 0%, transparent 60%),
         linear-gradient(135deg, var(--bg-1), var(--bg-2) 40%, var(--bg-3));
       overflow: hidden;
     }
@@ -42,69 +40,38 @@
       isolation: isolate;
     }
 
-    /* Floating hearts */
-    .hearts { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-    .heart{
+    .bubbles { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .bubble{
       position: absolute;
-      width: 20px; height: 18px;
-      background: var(--pink);
-      transform: rotate(-45deg);
-      opacity: .12;
-      filter: blur(.5px);
-      animation: float 14s linear infinite;
-    }
-    .heart::before, .heart::after{
-      content: "";
-      position: absolute;
-      width: 20px; height: 18px;
-      background: var(--pink);
+      width: 20px; height: 20px;
+      background: var(--aqua);
       border-radius: 50%;
+      opacity: .15;
+      animation: rise 14s linear infinite;
     }
-    .heart::before{ top: -10px; left: 0; }
-    .heart::after{ left: 10px; top: 0; }
-
-    @keyframes float{
-      0%{ transform: translateY(110vh) rotate(-45deg) scale(.8); }
-      100%{ transform: translateY(-20vh) rotate(-45deg) scale(1.1); }
+    @keyframes rise{
+      0%{ transform: translateY(110vh) scale(.8); }
+      100%{ transform: translateY(-20vh) scale(1.1); }
     }
 
-    .heart:nth-child(1){ left: 5%; animation-duration: 16s; animation-delay: -2s; }
-    .heart:nth-child(2){ left: 12%; animation-duration: 18s; animation-delay: -6s; }
-    .heart:nth-child(3){ left: 20%; animation-duration: 15s; animation-delay: -10s; }
-    .heart:nth-child(4){ left: 28%; animation-duration: 20s; animation-delay: -4s; }
-    .heart:nth-child(5){ left: 35%; animation-duration: 17s; animation-delay: -12s; }
-    .heart:nth-child(6){ left: 42%; animation-duration: 19s; animation-delay: -8s; }
-    .heart:nth-child(7){ left: 50%; animation-duration: 14s; animation-delay: -1s; }
-    .heart:nth-child(8){ left: 58%; animation-duration: 21s; animation-delay: -9s; }
-    .heart:nth-child(9){ left: 66%; animation-duration: 16s; animation-delay: -3s; }
-    .heart:nth-child(10){ left: 74%; animation-duration: 18s; animation-delay: -11s; }
-    .heart:nth-child(11){ left: 82%; animation-duration: 15s; animation-delay: -5s; }
-    .heart:nth-child(12){ left: 90%; animation-duration: 19s; animation-delay: -7s; }
-    .heart:nth-child(13){ left: 25%; animation-duration: 22s; animation-delay: -13s; }
-    .heart:nth-child(14){ left: 77%; animation-duration: 23s; animation-delay: -14s; }
+    .bubble:nth-child(1){ left: 5%; animation-duration: 16s; animation-delay: -2s; }
+    .bubble:nth-child(2){ left: 15%; animation-duration: 20s; animation-delay: -6s; }
+    .bubble:nth-child(3){ left: 25%; animation-duration: 18s; animation-delay: -10s; }
+    .bubble:nth-child(4){ left: 40%; animation-duration: 22s; animation-delay: -4s; }
+    .bubble:nth-child(5){ left: 55%; animation-duration: 17s; animation-delay: -12s; }
+    .bubble:nth-child(6){ left: 70%; animation-duration: 19s; animation-delay: -8s; }
+    .bubble:nth-child(7){ left: 85%; animation-duration: 21s; animation-delay: -3s; }
 
     .card{
       z-index: 1;
       width: min(680px, 92vw);
-      background: linear-gradient(140deg, rgba(255,255,255,0.15), rgba(255,255,255,0.07));
+      background: linear-gradient(140deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
       border: 1px solid rgba(255,255,255,0.18);
       backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
       border-radius: 28px;
       box-shadow: var(--shadow);
       padding: clamp(26px, 4vw, 48px);
       position: relative;
-    }
-
-    .card::before{
-      content: "";
-      position: absolute; inset: -2px;
-      border-radius: 30px;
-      padding: 1px;
-      background: conic-gradient(from 180deg at 50% 50%, #ffffff33, transparent 20%, #ff7aa233 50%, transparent 70%, #ffffff22 90%);
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude;
-      pointer-events: none;
     }
 
     h1{
@@ -112,14 +79,13 @@
       font-size: clamp(42px, 8vw, 76px);
       line-height: 1.05;
       margin: 0 0 10px;
-      text-shadow: 0 8px 30px rgba(255, 122, 162, 0.35);
+      text-shadow: 0 8px 30px rgba(111, 255, 233, 0.35);
     }
 
     .subtitle{
       font-size: clamp(16px, 2.2vw, 20px);
       opacity: .9;
       margin-bottom: 22px;
-      letter-spacing: .3px;
     }
 
     .message{
@@ -134,20 +100,14 @@
     }
 
     .signature{
-      display: flex; align-items: center; gap: 10px; opacity: .9;
       font-weight: 600;
       letter-spacing: .2px;
     }
 
-    .sig-heart{ width: 18px; height: 16px; background: var(--rose); transform: rotate(-45deg); position: relative; display: inline-block; }
-    .sig-heart::before, .sig-heart::after{ content: ""; position: absolute; width: 18px; height: 16px; background: var(--rose); border-radius: 50%; }
-    .sig-heart::before{ left: 0; top: -9px; }
-    .sig-heart::after{ left: 9px; top: 0; }
-
     .badge{
       position: absolute; top: -14px; right: 18px;
-      background: rgba(255, 122, 162, .16);
-      border: 1px solid rgba(255, 122, 162, .35);
+      background: rgba(111, 255, 233, .16);
+      border: 1px solid rgba(111, 255, 233, .35);
       color: var(--light);
       padding: 8px 14px;
       border-radius: 999px;
@@ -159,60 +119,45 @@
       margin-top: 26px;
       display: inline-block;
       text-decoration: none;
-      background: linear-gradient(135deg, var(--rose), var(--pink));
+      background: linear-gradient(135deg, var(--teal), var(--aqua));
       color: white;
       padding: 12px 20px;
       border-radius: 999px;
-      box-shadow: 0 12px 24px rgba(255,77,109,.35);
+      box-shadow: 0 12px 24px rgba(0,194,168,.35);
       font-weight: 600;
       letter-spacing: .3px;
       transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-      user-select: none;
     }
-    .cta:hover{ transform: translateY(-2px); box-shadow: 0 16px 30px rgba(255,77,109,.45); filter: saturate(1.08); }
-    .cta:active{ transform: translateY(0); box-shadow: 0 8px 18px rgba(255,77,109,.35); }
-
-    @media (prefers-reduced-motion: reduce){
-      .heart{ animation: none; }
-    }
+    .cta:hover{ transform: translateY(-2px); box-shadow: 0 16px 30px rgba(0,194,168,.45); filter: saturate(1.08); }
   </style>
 </head>
 <body>
   <div class="scene">
-    <div class="hearts" aria-hidden="true">
-      <span class="heart"></span>
-      <span class="heart"></span>
-      <span class="heart"></span>
-      <span class="heart"></span>
-      <span class="heart"></span>
-      <span class="heart"></span>
-      <span class="heart"></span>
-      <span class="heart"></span>
-      <span class="heart"></span>
-      <span class="heart"></span>
-      <span class="heart"></span>
-      <span class="heart"></span>
-      <span class="heart"></span>
-      <span class="heart"></span>
+    <div class="bubbles" aria-hidden="true">
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
     </div>
 
     <article class="card" role="main" aria-labelledby="nadpis">
-      <div class="badge">pre ♥ teba</div>
-      <h1 id="nadpis">Pre „Lejku zlodejku“</h1>
-      <p class="subtitle">malá stránka plná obdivu</p>
+      <div class="badge">z Nových Zámkov 🌍</div>
+      <h1 id="nadpis">Pre Marianu</h1>
+      <p class="subtitle">slovensko‑maďarská kráska s okuliarmi ✨</p>
 
       <p class="message">
-        Si <strong>veľmi nádherná</strong> — zvonka aj zvnútra. Keď sa usmeješ, deň je hneď jasnejší a srdce bije o kúsok rýchlejšie. Ďakujem, za tvoje hlasovky tie vždy potešia dúfam že aj papagáje do klietky prídu 💖
+        Mariana, hovorí sa, že z <strong>Nových Zámkov</strong> pochádzajú len KOKOTI — a ty si ale výnimka. Navyše, ako správna <strong>čiernovláska</strong>, máš šarm, ktorý sa nedá prehliadnuť. 🤭<br><br>
+        Tvoje <strong>mega krásne okuliare</strong> by kľudne mohli mať vlastný fanclub, a musím pripomenúť — <em>nemáš krivý nos!</em> Celá si nádherná, presne taká, aká máš byť. 💎
       </p>
 
       <div class="divider"></div>
 
-      <div class="signature">
-        <span class="sig-heart" aria-hidden="true"></span>
-        S obdivom, Gulko
-      </div>
+      <div class="signature">Obdivovateľ, čo vie oceniť okuliare aj krásu s hlavne rovný nos 💙</div>
 
-      <a class="cta" href="#" onclick="return false;" aria-label="Objatie">Pošli objatie</a>
+      <a class="cta" href="#" onclick="return false;">Pošli úsmev</a>
     </article>
   </div>
 </body>
