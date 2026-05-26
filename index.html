@@ -1,164 +1,38 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pre Marianu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg-1: #10201f;
-      --bg-2: #1c2f3a;
-      --bg-3: #16324f;
-      --aqua: #6fffe9;
-      --teal: #00c2a8;
-      --light: #e8fffb;
-      --shadow: 0 20px 40px rgba(0,0,0,.35);
-    }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-
-    body{
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      color: var(--light);
-      background:
-        radial-gradient(1200px 800px at 20% 10%, #1c3f4a 0%, transparent 60%),
-        radial-gradient(1000px 700px at 90% 0%, #124a42 0%, transparent 60%),
-        radial-gradient(1200px 900px at 50% 100%, #0f2027 0%, transparent 60%),
-        linear-gradient(135deg, var(--bg-1), var(--bg-2) 40%, var(--bg-3));
-      overflow: hidden;
-    }
-
-    .scene {
-      position: relative;
-      min-height: 100%;
-      display: grid;
-      place-items: center;
-      padding: 48px 20px;
-      isolation: isolate;
-    }
-
-    .bubbles { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-    .bubble{
-      position: absolute;
-      width: 20px; height: 20px;
-      background: var(--aqua);
-      border-radius: 50%;
-      opacity: .15;
-      animation: rise 14s linear infinite;
-    }
-    @keyframes rise{
-      0%{ transform: translateY(110vh) scale(.8); }
-      100%{ transform: translateY(-20vh) scale(1.1); }
-    }
-
-    .bubble:nth-child(1){ left: 5%; animation-duration: 16s; animation-delay: -2s; }
-    .bubble:nth-child(2){ left: 15%; animation-duration: 20s; animation-delay: -6s; }
-    .bubble:nth-child(3){ left: 25%; animation-duration: 18s; animation-delay: -10s; }
-    .bubble:nth-child(4){ left: 40%; animation-duration: 22s; animation-delay: -4s; }
-    .bubble:nth-child(5){ left: 55%; animation-duration: 17s; animation-delay: -12s; }
-    .bubble:nth-child(6){ left: 70%; animation-duration: 19s; animation-delay: -8s; }
-    .bubble:nth-child(7){ left: 85%; animation-duration: 21s; animation-delay: -3s; }
-
-    .card{
-      z-index: 1;
-      width: min(680px, 92vw);
-      background: linear-gradient(140deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
-      border: 1px solid rgba(255,255,255,0.18);
-      backdrop-filter: blur(8px);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      padding: clamp(26px, 4vw, 48px);
-      position: relative;
-    }
-
-    h1{
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(42px, 8vw, 76px);
-      line-height: 1.05;
-      margin: 0 0 10px;
-      text-shadow: 0 8px 30px rgba(111, 255, 233, 0.35);
-    }
-
-    .subtitle{
-      font-size: clamp(16px, 2.2vw, 20px);
-      opacity: .9;
-      margin-bottom: 22px;
-    }
-
-    .message{
-      font-size: clamp(18px, 2.4vw, 22px);
-      line-height: 1.7;
-    }
-
-    .divider{
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
-      margin: 26px 0 18px;
-    }
-
-    .signature{
-      font-weight: 600;
-      letter-spacing: .2px;
-    }
-
-    .badge{
-      position: absolute; top: -14px; right: 18px;
-      background: rgba(111, 255, 233, .16);
-      border: 1px solid rgba(111, 255, 233, .35);
-      color: var(--light);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 13px; letter-spacing: .4px;
-      backdrop-filter: blur(6px);
-    }
-
-    .cta{
-      margin-top: 26px;
-      display: inline-block;
-      text-decoration: none;
-      background: linear-gradient(135deg, var(--teal), var(--aqua));
-      color: white;
-      padding: 12px 20px;
-      border-radius: 999px;
-      box-shadow: 0 12px 24px rgba(0,194,168,.35);
-      font-weight: 600;
-      letter-spacing: .3px;
-      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-    }
-    .cta:hover{ transform: translateY(-2px); box-shadow: 0 16px 30px rgba(0,194,168,.45); filter: saturate(1.08); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre Julcu ❤️</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="scene">
-    <div class="bubbles" aria-hidden="true">
-      <span class="bubble"></span>
-      <span class="bubble"></span>
-      <span class="bubble"></span>
-      <span class="bubble"></span>
-      <span class="bubble"></span>
-      <span class="bubble"></span>
-      <span class="bubble"></span>
-    </div>
 
-    <article class="card" role="main" aria-labelledby="nadpis">
-      <div class="badge">z Nových Zámkov 🌍</div>
-      <h1 id="nadpis">Pre LEA</h1>
-      <p class="subtitle">slovensko‑maďarská kráska s okuliarmi ✨</p>
+<div class="hearts"></div>
 
-      <p class="message">
-        Mariana, hovorí sa, že z <strong>Nových Zámkov</strong> pochádzajú len KOKOTI — a ty si ale výnimka. Navyše, ako správna <strong>čiernovláska</strong>, máš šarm, ktorý sa nedá prehliadnuť. 🤭<br><br>
-        Tvoje <strong>mega krásne okuliare</strong> by kľudne mohli mať vlastný fanclub, a musím pripomenúť — <em>nemáš krivý nos!</em> Celá si nádherná, presne taká, aká máš byť. 💎
-      </p>
+<div class="container">
+    <h1>❤️ Famózna Julca ❤️</h1>
 
-      <div class="divider"></div>
+    <p>
+        Julca, ktorá má fakt dobrý indický outfit,
+        ktorá fakt chápe a rešpektuje ľudí takých,
+        akí sú.
+    </p>
 
-      <div class="signature">Obdivovateľ, čo vie oceniť okuliare aj krásu a hlavne rovný nos 💙</div>
+    <p>
+        A aj keď občas pôsobím divne 😄,
+        rád by som ťa zobral na kávu.
+    </p>
 
-      <a class="cta" href="#" onclick="return false;">Pošli úsmev</a>
-    </article>
-  </div>
+    <button id="loveButton">
+        Chcem ťa vidieť ešte niekedy ❤️
+    </button>
+
+    <div id="message"></div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
