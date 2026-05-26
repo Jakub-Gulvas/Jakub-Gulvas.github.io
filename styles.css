@@ -1,124 +1,304 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(
-135deg,
-#ff9a9e,
-#fad0c4
-);
+    font-family:'Segoe UI',sans-serif;
 
-overflow:hidden;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+    -45deg,
+    #ff758c,
+    #ff7eb3,
+    #ffc3a0,
+    #ffd1dc
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 12s ease infinite;
 }
+
+
+/* Hlavný box */
 
 .container{
-width:600px;
-padding:40px;
-text-align:center;
 
-background:rgba(255,255,255,0.2);
+    width:100%;
+    max-width:700px;
 
-backdrop-filter:blur(15px);
+    padding:50px;
 
-border-radius:25px;
+    border-radius:35px;
 
-box-shadow:
-0 0 25px rgba(255,255,255,0.4);
+    background:rgba(255,255,255,0.15);
 
-animation:float 3s infinite alternate;
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,0.3);
+
+    box-shadow:
+    0px 8px 40px rgba(0,0,0,0.25);
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    z-index:2;
+
+    animation:floatBox 4s ease-in-out infinite;
 }
+
+
+/* Nadpis */
 
 h1{
-margin-bottom:20px;
-color:white;
-font-size:38px;
+
+    font-size:3rem;
+
+    margin-bottom:25px;
+
+    text-shadow:
+    0 0 15px rgba(255,255,255,0.8);
+
+    animation:glow 2s infinite alternate;
 }
+
+
+/* Text */
 
 p{
-color:white;
-font-size:20px;
-margin:15px;
-line-height:1.5;
+
+    font-size:1.2rem;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+    opacity:0.95;
 }
 
+
+/* Tlačidlo */
+
 button{
-margin-top:30px;
 
-padding:15px 30px;
+    padding:16px 35px;
 
-border:none;
+    border:none;
 
-border-radius:30px;
+    border-radius:50px;
 
-font-size:18px;
+    cursor:pointer;
 
-cursor:pointer;
+    font-size:18px;
 
-background:white;
+    font-weight:bold;
 
-color:#ff4081;
+    color:#ff4081;
 
-transition:0.4s;
+    background:white;
+
+    transition:0.5s;
+
+    box-shadow:
+    0 0 25px rgba(255,255,255,0.5);
+
 }
 
 button:hover{
-transform:scale(1.1);
 
-box-shadow:
-0 0 30px pink;
+    transform:
+    scale(1.1)
+    translateY(-5px);
+
+    box-shadow:
+    0 0 35px pink,
+    0 0 60px #ff69b4;
 }
+
 
 #message{
-margin-top:20px;
-color:white;
-font-size:22px;
+
+    margin-top:25px;
+
+    font-size:1.4rem;
+
+    font-weight:bold;
 }
 
-@keyframes float{
 
-from{
-transform:translateY(-10px);
+/* Plávajúce srdcia */
+
+.hearts{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    top:0;
+    left:0;
 }
 
-to{
-transform:translateY(10px);
-}
 
-}
+.hearts::before{
 
-.hearts::before,
-.hearts::after{
-content:"❤️ ❤️ ❤️ ❤️ ❤️";
+content:
+"💖 💕 ❤️ 💗 💓 💞 ❤️ 💖 💕 ❤️ 💗 💓 💞 ❤️";
 
 position:absolute;
 
-width:100%;
-
 font-size:30px;
 
-animation:fall 12s linear infinite;
+width:100%;
+
+animation:heartsFall 15s linear infinite;
+
+opacity:0.5;
 }
+
 
 .hearts::after{
-animation-delay:5s;
+
+content:
+"❤️ 💗 💖 💕 💞 💓 ❤️ 💗 💖 💕 💞";
+
+position:absolute;
+
+font-size:40px;
+
+width:100%;
+
+animation:heartsFall2 20s linear infinite;
+
+opacity:0.4;
 }
 
-@keyframes fall{
+
+/* Animácie */
+
+@keyframes heartsFall{
 
 0%{
-transform:translateY(-100vh);
+transform:
+translateY(-100px)
+translateX(-100px);
 }
 
 100%{
-transform:translateY(100vh);
+transform:
+translateY(120vh)
+translateX(100px);
+}
+
+}
+
+
+@keyframes heartsFall2{
+
+0%{
+transform:
+translateY(-150px)
+translateX(150px);
+}
+
+100%{
+transform:
+translateY(120vh)
+translateX(-150px);
+}
+
+}
+
+
+@keyframes glow{
+
+from{
+text-shadow:
+0 0 10px white;
+}
+
+to{
+text-shadow:
+0 0 30px pink;
+}
+
+}
+
+
+@keyframes bgMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+
+@keyframes floatBox{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+
+/* Mobil */
+
+@media(max-width:768px){
+
+.container{
+
+padding:30px;
+}
+
+h1{
+font-size:2rem;
+}
+
+p{
+font-size:1rem;
+}
+
+button{
+
+width:100%;
+
+font-size:16px;
 }
 
 }
