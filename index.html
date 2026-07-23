@@ -1,38 +1,99 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre Julcu ❤️</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d85a83">
+  <title>Pre Anetu, s láskou</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="aurora aurora-one"></div>
+  <div class="aurora aurora-two"></div>
+  <div id="floating-hearts" aria-hidden="true"></div>
 
-<div class="hearts"></div>
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow"><span>♥</span> Len pre teba, Aneta <span>♥</span></p>
+      <div class="hero-heart" aria-hidden="true">♥</div>
+      <h1 id="page-title">Si môj najkrajší<br><em>dôvod na úsmev.</em></h1>
+      <p class="intro">Každý obyčajný okamih je s tebou malým zázrakom. Táto stránka je len drobná pripomienka toho, aká si pre mňa výnimočná.</p>
+      <button class="primary-button" id="love-note-button" type="button">
+        <span>Otvor moje srdce</span><span aria-hidden="true">→</span>
+      </button>
+    </section>
 
-<div class="container">
-    <h1>❤️ Famózna Julca ❤️</h1>
+    <section class="love-note card is-hidden" id="love-note" aria-live="polite">
+      <p class="card-label">Moje malé vyznanie</p>
+      <p>„Aneta, ďakujem, že robíš môj svet krajším presne tým, že si v ňom ty. Si moje obľúbené miesto, kam sa vraciam.”</p>
+      <div class="signature">S láskou, vždy <span>♥</span></div>
+    </section>
 
-    <p>
-        Julca, ktorá má fakt dobrý indický outfit,
-        ktorá fakt chápe a rešpektuje ľudí takých,
-        akí sú.
-    </p>
+    <section class="reasons" aria-labelledby="reasons-title">
+      <div class="section-heading">
+        <p class="eyebrow">Pár dôvodov</p>
+        <h2 id="reasons-title">Prečo si úžasná</h2>
+      </div>
+      <div class="reason-grid">
+        <article class="reason-card">
+          <span class="reason-icon" aria-hidden="true">☀</span>
+          <h3>Tvoj úsmev</h3>
+          <p>Má talent rozjasniť aj ten najobyčajnejší deň.</p>
+        </article>
+        <article class="reason-card">
+          <span class="reason-icon" aria-hidden="true">✦</span>
+          <h3>Tvoja duša</h3>
+          <p>Je v nej viac krásy, než sa dá vložiť do slov.</p>
+        </article>
+        <article class="reason-card">
+          <span class="reason-icon" aria-hidden="true">♬</span>
+          <h3>Naše chvíle</h3>
+          <p>S tebou sa aj ticho mení na obľúbenú pieseň.</p>
+        </article>
+      </div>
+    </section>
 
-    <p>
-        A aj keď občas pôsobím divne 😄,
-        rád by som ťa zobral na kávu.
-    </p>
+    <section class="game card" id="game" aria-labelledby="game-title">
+      <p class="card-label">Mini hra pre Anetu</p>
+      <h2 id="game-title">Máš ma rada?</h2>
+      <p class="game-copy">Odpoveď poznám... ale chceš mi ju povedať aj ty?</p>
+      <div class="game-area" id="game-area">
+        <button class="yes-button" id="yes-button" type="button">Áno, veľmi! ♥</button>
+        <button class="no-button" id="no-button" type="button">Nie</button>
+      </div>
+      <p class="game-hint" id="game-hint">Pozor, jedno tlačidlo je trošku hanblivé.</p>
+    </section>
 
-    <button id="loveButton">
-        Chcem ťa vidieť ešte niekedy ❤️
-    </button>
+    <section class="mood-card card" aria-labelledby="mood-title">
+      <div>
+        <p class="card-label">Denná dávka lásky</p>
+        <h2 id="mood-title">Klikni pre úsmev</h2>
+        <p id="compliment">Máš v sebe niečo, čo robí svet jemnejším.</p>
+      </div>
+      <button class="round-button" id="compliment-button" type="button" aria-label="Zobraziť ďalší milý odkaz">♥</button>
+    </section>
 
-    <div id="message"></div>
+    <footer>
+      <p>Vyrobené s nekonečne veľa <span aria-label="lásky">♥</span> pre Anetu</p>
+      <button class="text-button" id="share-button" type="button">Pošli si túto lásku ↗</button>
+    </footer>
+  </main>
 
-</div>
+  <div class="celebration is-hidden" id="celebration" role="dialog" aria-modal="true" aria-labelledby="celebration-title">
+    <div class="celebration-card">
+      <button class="close-button" id="close-celebration" type="button" aria-label="Zavrieť">×</button>
+      <div class="celebration-heart" aria-hidden="true">♥</div>
+      <p class="eyebrow">Vedela som to!</p>
+      <h2 id="celebration-title">A ja teba ešte viac.</h2>
+      <p>Teraz je tento deň oficiálne krajší. Ďakujem, že si ty, Aneta.</p>
+      <button class="primary-button" id="more-hearts-button" type="button">Viac srdiečok, prosím! ♥</button>
+    </div>
+  </div>
 
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
+
