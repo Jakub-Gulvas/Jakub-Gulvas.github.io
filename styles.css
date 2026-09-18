@@ -1,5 +1,3 @@
-
-
 :root {
   --ink: #492638;
   --muted: #805b6a;
@@ -119,7 +117,8 @@ h1 em { color: var(--pink); }
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.primary-button:hover, .primary-button:focus-visible, .yes-button:hover, .yes-button:focus-visible {
+.primary-button:hover, .primary-button:focus-visible,
+.yes-button:hover, .yes-button:focus-visible {
   box-shadow: 0 14px 27px rgba(188, 56, 103, 0.34);
   transform: translateY(-2px);
 }
@@ -137,7 +136,8 @@ h1 em { color: var(--pink); }
   padding: 28px;
   text-align: center;
   transform-origin: top;
-  transition: opacity 350ms ease, transform 350ms ease, margin 350ms ease, padding 350ms ease;
+  transition: opacity 350ms ease, transform 350ms ease,
+              margin 350ms ease, padding 350ms ease;
 }
 
 .love-note p:nth-child(2) {
@@ -168,7 +168,14 @@ h1 em { color: var(--pink); }
 }
 
 .section-heading { margin-bottom: 21px; text-align: center; }
-.section-heading h2, .game h2, .mood-card h2 { margin-bottom: 0; font-size: 2rem; letter-spacing: -0.035em; }
+
+.section-heading h2,
+.game h2,
+.mood-card h2 {
+  margin-bottom: 0;
+  font-size: 2rem;
+  letter-spacing: -0.035em;
+}
 
 .reason-grid {
   display: grid;
@@ -185,14 +192,50 @@ h1 em { color: var(--pink); }
   background: rgba(255, 255, 255, 0.53);
 }
 
-.reason-icon { display: block; margin-bottom: 10px; color: var(--pink); font-size: 1.45rem; }
-.reason-card h3 { margin-bottom: 7px; font-size: 1.08rem; }
-.reason-card p { margin: 0; color: var(--muted); font-size: 0.79rem; line-height: 1.45; }
+.reason-icon {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--pink);
+  font-size: 1.45rem;
+}
 
-.game { position: relative; margin-bottom: 18px; padding: 33px 24px 23px; text-align: center; overflow: hidden; }
-.game::before { position: absolute; top: -48px; right: -32px; color: rgba(226, 92, 135, 0.1); content: "♥"; font-size: 10rem; }
+.reason-card h3 {
+  margin-bottom: 7px;
+  font-size: 1.08rem;
+}
+
+.reason-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.79rem;
+  line-height: 1.45;
+}
+
+.game {
+  position: relative;
+  margin-bottom: 18px;
+  padding: 33px 24px 23px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.game::before {
+  position: absolute;
+  top: -48px;
+  right: -32px;
+  color: rgba(226, 92, 135, 0.1);
+  content: "♥";
+  font-size: 10rem;
+}
+
 .game > * { position: relative; }
-.game-copy { max-width: 370px; margin: 12px auto 22px; color: var(--muted); line-height: 1.5; }
+
+.game-copy {
+  max-width: 370px;
+  margin: 12px auto 22px;
+  color: var(--muted);
+  line-height: 1.5;
+}
 
 .game-area {
   position: relative;
@@ -216,7 +259,12 @@ h1 em { color: var(--pink); }
   transition: left 250ms ease, top 250ms ease, transform 180ms ease;
 }
 
-.game-hint { min-height: 20px; margin: 7px 0 0; color: #a07686; font-size: 0.78rem; }
+.game-hint {
+  min-height: 20px;
+  margin: 7px 0 0;
+  color: #a07686;
+  font-size: 0.78rem;
+}
 
 .mood-card {
   display: flex;
@@ -228,8 +276,15 @@ h1 em { color: var(--pink); }
 }
 
 .mood-card .card-label { margin-bottom: 7px; }
+
 .mood-card h2 { font-size: 1.53rem; }
-.mood-card p:not(.card-label) { max-width: 430px; margin: 9px 0 0; color: var(--muted); line-height: 1.55; }
+
+.mood-card p:not(.card-label) {
+  max-width: 430px;
+  margin: 9px 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
 
 .round-button {
   flex: 0 0 auto;
@@ -244,14 +299,44 @@ h1 em { color: var(--pink); }
   font-size: 1.35rem;
   transition: transform 180ms ease;
 }
-.round-button:hover { transform: rotate(15deg) scale(1.08); }
 
-footer { color: var(--muted); text-align: center; font-size: 0.84rem; }
+.round-button:hover {
+  transform: rotate(15deg) scale(1.08);
+}
+
+footer {
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.84rem;
+}
+
 footer p { margin-bottom: 10px; }
-.text-button { padding: 4px; cursor: pointer; color: var(--pink-dark); border: 0; border-bottom: 1px solid currentColor; background: transparent; font-weight: 700; }
 
-#floating-hearts { position: fixed; z-index: 0; inset: 0; overflow: hidden; pointer-events: none; }
-.floating-heart { position: absolute; bottom: -40px; color: var(--pink); opacity: 0; animation: float-up linear forwards; }
+.text-button {
+  padding: 4px;
+  cursor: pointer;
+  color: var(--pink-dark);
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  font-weight: 700;
+}
+
+#floating-hearts {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -40px;
+  color: var(--pink);
+  opacity: 0;
+  animation: float-up linear forwards;
+}
 
 .celebration {
   position: fixed;
@@ -277,29 +362,132 @@ footer p { margin-bottom: 10px; }
   box-shadow: 0 24px 80px rgba(52, 18, 37, 0.28);
   animation: pop-in 360ms cubic-bezier(.2,.9,.3,1.15);
 }
-.celebration-heart { margin-bottom: 11px; color: var(--pink); font-size: 3.4rem; animation: heartbeat 1.1s ease-in-out infinite; }
-.celebration-card h2 { margin-bottom: 13px; font-size: 2.25rem; line-height: 1.05; letter-spacing: -0.04em; }
-.celebration-card p:not(.eyebrow) { margin-bottom: 23px; color: var(--muted); line-height: 1.6; }
-.close-button { position: absolute; top: 12px; right: 15px; width: 34px; height: 34px; cursor: pointer; color: var(--muted); border: 0; border-radius: 50%; background: #f9e9ee; font-size: 1.5rem; line-height: 1; }
 
-.confetti { position: fixed; z-index: 8; top: -14px; width: 10px; height: 14px; border-radius: 4px; pointer-events: none; animation: confetti-fall 2.6s ease-in forwards; }
+.celebration-heart {
+  margin-bottom: 11px;
+  color: var(--pink);
+  font-size: 3.4rem;
+  animation: heartbeat 1.1s ease-in-out infinite;
+}
 
-@keyframes heartbeat { 0%, 100% { transform: rotate(-8deg) scale(1); } 14% { transform: rotate(-8deg) scale(1.1); } 28% { transform: rotate(-8deg) scale(1); } 42% { transform: rotate(-8deg) scale(1.06); } }
-@keyframes float-up { 0% { transform: translateY(0) rotate(0); opacity: 0; } 12% { opacity: 0.55; } 100% { transform: translateY(-110vh) rotate(120deg); opacity: 0; } }
-@keyframes pop-in { from { opacity: 0; transform: scale(0.8) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
-@keyframes confetti-fall { to { transform: translate3d(var(--drift), 110vh, 0) rotate(720deg); opacity: 0; } }
+.celebration-card h2 {
+  margin-bottom: 13px;
+  font-size: 2.25rem;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.celebration-card p:not(.eyebrow) {
+  margin-bottom: 23px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.close-button {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  color: var(--muted);
+  border: 0;
+  border-radius: 50%;
+  background: #f9e9ee;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.confetti {
+  position: fixed;
+  z-index: 8;
+  top: -14px;
+  width: 10px;
+  height: 14px;
+  border-radius: 4px;
+  pointer-events: none;
+  animation: confetti-fall 2.6s ease-in forwards;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: rotate(-8deg) scale(1);
+  }
+
+  14% {
+    transform: rotate(-8deg) scale(1.1);
+  }
+
+  28% {
+    transform: rotate(-8deg) scale(1);
+  }
+
+  42% {
+    transform: rotate(-8deg) scale(1.06);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(120deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translate3d(var(--drift), 110vh, 0) rotate(720deg);
+    opacity: 0;
+  }
+}
 
 @media (max-width: 440px) {
-  .page-shell { width: min(100% - 24px, 670px); padding-top: 28px; }
+  .page-shell {
+    width: min(100% - 24px, 670px);
+    padding-top: 28px;
+  }
+
   .hero { padding-bottom: 42px; }
+
   .reason-grid { gap: 8px; }
+
   .reason-card { padding: 15px 8px; }
+
   .reason-card p { font-size: 0.72rem; }
+
   .game { padding: 28px 14px 20px; }
+
   .mood-card { padding: 20px 17px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
-
